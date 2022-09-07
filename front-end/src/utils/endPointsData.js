@@ -8,6 +8,10 @@ export const registerEndpointData = {
   endpoint: 'http://localhost:3001/register',
   statusInvalid: 409,
   statusRegisterAccept: 201,
+
+  deleteRegiter: {
+    endpoint: (id) => `http://localhost:3001/user/${id}`,
+  },
 };
 
 export const saleEndPointData = {

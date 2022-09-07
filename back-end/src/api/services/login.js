@@ -16,9 +16,11 @@ const loginUser = async (passWord, email) => {
     // attributes: { exclude: ['id', 'password'] }, // antes
   });
 
+  console.log('user', user.role);
+
   checkUserIfExist(user);
 
-  const token = createToken.create({ email });
+  const token = createToken.create({ email, role: user.role });
 
   return { status: 200, token, user };
 };
