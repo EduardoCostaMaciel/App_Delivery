@@ -6,7 +6,7 @@ const getAllUser = async (_req, res) => {
 };
 
 const deleteUser = async (req, res) => {
-  const { user: { role },  params: { id } } = req;
+  const { user: { role }, params: { id } } = req;
   const { data } = await serviceUser.deleteUser(id, role);
   if (data.message) {
     return res.status(data.status).json(data.message);

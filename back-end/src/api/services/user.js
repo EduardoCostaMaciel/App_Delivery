@@ -16,7 +16,7 @@ const { id } = await User.findOne({
 
 const deleteUser = async (id, role) => {
   const data = { status: 404, message: 'Not authorized' };
-  if (role !== 'administrator') throw data
+  if (role !== 'administrator') throw data;
 
   const user = await User.findOne({ where: { id } });
   await user.destroy();

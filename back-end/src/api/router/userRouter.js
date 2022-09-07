@@ -10,7 +10,7 @@ userRouter.get('/', rescue(userController.getAllUser));
 userRouter.delete(
   '/:id',
   isAuthorized.verifyToken,
-  rescue(userController.deleteUser)
+  rescue(userController.deleteUser),
 );
 
 module.exports = userRouter;
